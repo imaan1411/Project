@@ -4,10 +4,33 @@
     <meta charset="utf-8">
     <title>sf</title>
     <style media="screen">
-
+#field{
+  border: 1px solid;
+  height: 500px;
+  width: 500px;
+  position: relative;
+}
+#ball{
+  background-color: #9C27B0;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+}
     </style>
   </head>
   <body>
-
+<div id="field">
+  <div id="ball"></div>
+</div>
   </body>
+  <script type="text/javascript">
+  function move() {
+  var balll = document.getElementById("ball");
+  var pos = 0;
+  var id = setInterval (frame, 5);
+  function frame() {
+
+  }
+}
+  </script>
 </html>
