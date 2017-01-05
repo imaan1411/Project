@@ -11,3 +11,46 @@
   position: absolute;
   background: #000;
 }
+
+function move() {
+var balll = document.getElementById("ball");
+var pos = 0;
+var id = setInterval (frame, 4);
+function frame() {
+  if (pos == 420) {
+    clearInterval(id);
+  }
+  else {
+    pos++;
+    balll.style.top = pos + "px";
+    balll.style.bottom = pos + "px";
+  }
+
+}
+}
+
+var top = 0;
+if (e.keyCode == 40) {
+  top += 2;
+  ball.style.top = (paraseTnt(zop) + top) + "px";
+}
+}
+
+function down() {
+var element = document.getElementById("ball");
+element.style.top = paraseTnt(element.style.top) + 5 "px";
+
+
+if (x<0 || x>400)
+  dx=-dx;
+if (y<0 || y>300)
+  dy=-dy;
+  x+=dx;
+  y+=dy;
+
+  setInterval(moveBall,10);
+
+  var dx= 9;
+  var dy=9;
+  var y=150;
+  var x=10;

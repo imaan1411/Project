@@ -1,36 +1,93 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>sf</title>
+<meta charset="utf-8">    <title>sf</title>
     <style media="screen">
 #field{
   border: 1px solid;
   height: 500px;
   width: 500px;
   position: relative;
+
 }
-#ball{
+#paddle{
   background-color: #9C27B0;
+  height: 80px;
+  width: 10px;
+  position: absolute;
+  margin-left: 0.625em;
+}
+
+#ball {
+  background-color: #9C27B0;
+  border-radius: 10px;
   height: 10px;
   width: 10px;
   position: absolute;
+
 }
     </style>
-  </head>
-  <body>
-<div id="field">
-  <div id="ball"></div>
-</div>
-  </body>
-  <script type="text/javascript">
-  function move() {
-  var balll = document.getElementById("ball");
-  var pos = 0;
-  var id = setInterval (frame, 5);
+    <script type="text/javascript">
+    function upArrowPressed() {
+      var element = document.getElementById("paddle");
+
+      if (parseInt(element.style.top) > 0)
+        element.style.top = parseInt(element.style.top) - 12 + 'px';
+    }
+
+    function downArrowPressed() {
+    var element = document.getElementById("paddle");
+
+    if (parseInt(element.style.top) < 420)
+
+    element.style.top = parseInt(element.style.top) + 12 + 'px';
+    }
+
+    function movePaddle(evt) {
+
+        switch (evt.keyCode) {
+            case 87:
+            upArrowPressed();
+            break;
+            case 83:
+            downArrowPressed();
+            break;
+            }
+        };
+function move()
+{
+  window.addEventListener('keydown', movePaddle);
+}
+
+function moveBall() {
+  var elem = document.getElementById("ball");
+  var posX = 250;
+  var posY = 0;
+  var dx= 9;
+  var dy=9;
+  var id = setInterval(frame, 10);
+  var direction = 1; // 1 für nach rechts, -1 für nach links
   function frame() {
 
+    if (posX < 0 || posX > 490)
+      dx=-dx;
+    if (posY < 0 || posY > 490)
+      dy=-dy;
+      posX+=dx;
+      posY+=dy;
   }
+  setInterval(moveBall,10);
+
 }
-  </script>
+
+
+
+</script>
+  </head>
+  <body onload="move(), moveBall()"  onkeydown="" onkeyup="">
+<div id="field">
+  <div id="paddle" style="position:absolute; left:0; top:0;" height="15" width="15"></div>
+    <div id="ball"></div>
+</div>
+  </body>
 </html>
