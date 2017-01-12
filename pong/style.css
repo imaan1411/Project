@@ -54,3 +54,109 @@ if (y<0 || y>300)
   var dy=9;
   var y=150;
   var x=10;
+
+  var x = 0;
+var speed = 3;
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(0);
+  stroke(255);
+  strokeWeight(4);
+  fill (255);
+  rect(20, 150, 20, 100);
+  ellipse(x, 200, 10, 10);
+
+  if (x > width || x < 0) {
+    speed = speed * -1;
+  }
+
+ x = x + speed;
+}
+
+function mousePressed() {
+  background(250, 250, 100);
+}
+
+
+var x = 100;
+var y = 100;
+
+function setup() {
+  createCanvas(512, 512);
+}
+
+function draw() {
+  if (keyIsDown(LEFT_ARROW))
+    x-=5;
+
+  if (keyIsDown(RIGHT_ARROW))
+    x+=5;
+
+  if (keyIsDown(UP_ARROW))
+    y-=5;
+
+  if (keyIsDown(DOWN_ARROW))
+    y+=5;
+
+clear();
+  fill(255, 0, 0);
+  ellipse(x, y, 50, 50);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var xEllipse = 0;
+var yEllipse = 200;
+var xRect = 20;
+var yRect = 200;
+var speed = 3;
+
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(0);
+  stroke(255);
+  strokeWeight(4);
+  fill (255);
+    if (keyIsDown(DOWN_ARROW))
+    yRect+=5;
+    if (keyIsDown(UP_ARROW))
+    yRect-=5;
+   if (yRect > 0)
+
+   if (yRect < 300)
+
+  rect(20, yRect, 20, 100);
+
+  ellipse(xEllipse, yEllipse, 10, 10);
+
+
+  if (xEllipse > width || xEllipse < 0 || xEllipse > rect)
+    speed = speed * -1;
+
+
+ xEllipse = xEllipse + speed;
+}
